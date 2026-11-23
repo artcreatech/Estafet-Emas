@@ -1,0 +1,14 @@
+# Raw pages stay on your machine by default (licensing of some sources is
+# unclear). The manifest.csv files ARE committed so the provenance is public.
+data/raw/**/*.html
+data/raw/**/*.json
+!data/raw/**/manifest.csv
+
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.ipynb_checkpoints/
+node_modules/
+.next/
+.DS_Store

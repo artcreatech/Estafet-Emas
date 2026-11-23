@@ -1,0 +1,41 @@
+# Sources for the 2026 data freeze (timeline task s1).
+# Run AFTER the BWF World Tour Finals (scheduled to end 13 Dec 2026):
+#   python -m pipeline.freeze_2026
+#
+# Each entry is saved raw to data/raw/2026/ and logged in its manifest.csv.
+# Wikipedia titles are best guesses: if one is wrong, the script prints
+# the closest matching article titles so you can fix it here and re-run.
+# Already-saved pages are skipped, so re-running only fetches what's missing.
+
+wikipedia:
+  # Season overview (results of every World Tour event)
+  - {id: wt-2026-season,        title: "2026 BWF World Tour"}
+  - {id: wt-2026-finals,        title: "2026 BWF World Tour Finals"}   # article may not exist until December
+  # Majors and team events
+  - {id: wc-2026,               title: "2026 BWF World Championships"}
+  - {id: thomas-uber-2026,      title: "2026 Thomas & Uber Cup"}
+  - {id: asian-games-2026,      title: "Badminton at the 2026 Asian Games"}
+  - {id: asia-champs-2026,      title: "2026 Badminton Asia Championships"}
+  - {id: asia-team-champs-2026, title: "2026 Badminton Asia Team Championships"}
+  - {id: world-juniors-2026,    title: "2026 BWF World Junior Championships"}
+  # Key World Tour events for the Crossroads chapter
+  - {id: all-england-2026,      title: "2026 All England Open"}
+  - {id: indonesia-open-2026,   title: "2026 Indonesia Open"}
+  - {id: indonesia-masters-2026, title: "2026 Indonesia Masters"}
+  - {id: japan-open-2026,       title: "2026 Japan Open (badminton)"}
+  - {id: china-open-2026,       title: "2026 China Open (badminton)"}
+  - {id: australian-open-2026,  title: "2026 Australian Open (badminton)"}
+  # Indonesian-language season pages often carry more local detail
+  - {id: id-indonesia-2026,     title: "Tim nasional bulu tangkis Indonesia", lang: id}
+
+# Any other page to keep a raw copy of, e.g. BWF Tournament Software result
+# pages or news reports. Set browser: true for pages that need a real
+# browser (cookie wall / JavaScript); that needs `pip install playwright`
+# and `playwright install chromium` once.
+urls:
+  # - {id: tsoft-wtf-2026-results, url: "https://bwf.tournamentsoftware.com/tournament/<GUID>/matches", browser: true}
+  - {id: rri-thomas-cup-exit,   url: "https://rri.co.id/voice-of-indonesia/sport/2376587"}
+  - {id: rri-asian-games-gold,  url: "https://rri.co.id/en/sport/2758099"}
+  - {id: rri-fajar-fikri-japan, url: "https://rri.co.id/en/sport/2581401"}
+  - {id: rri-alwi-australian,   url: "https://rri.co.id/en/sport/2492008"}
+  - {id: rri-amri-nita-wc,      url: "https://rri.co.id/voice-of-indonesia/sport/2672069"}
